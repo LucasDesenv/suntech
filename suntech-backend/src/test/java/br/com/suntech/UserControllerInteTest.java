@@ -19,7 +19,7 @@ import br.com.suntech.dto.UserDTO;
 @Sql(scripts = { "/script/user.sql" }, executionPhase = ExecutionPhase.BEFORE_TEST_METHOD)
 public class UserControllerInteTest extends SpringTest {
 	
-	private static final String URL_FIND_USERS = "/v1/api/user/{filter}";
+    private static final String URL_FIND_USERS = "/v1/api/user?filter={filter}";
 
 	@Test
 	@Rollback
