@@ -1,112 +1,62 @@
 package br.com.suntech.dto;
 
-import java.util.Date;
+import java.io.Serializable;
 
 import br.com.suntech.domain.IUser;
 
-public class UserDTO implements IUser {
-	private static final long serialVersionUID = 7646246790240510315L;
-	private Integer id;
-	private String username;
-	private String password;
-	private boolean enabled;
-	private Date registerDate;
-	private String name;
-	private String surname;
-	private String email;
-	private String phone;
-	
-	public UserDTO() {
-	}
-	
-	public UserDTO(IUser iUser) {
-		this.id = iUser.getId();
-		this.username = iUser.getUsername();
-		this.password = iUser.getPassword();
-		this.enabled = iUser.isEnabled();
-		this.registerDate = iUser.getRegisterDate();
-		this.name = iUser.getName();
-		this.surname = iUser.getSurname();
-		this.email = iUser.getEmail();
-		this.phone = iUser.getPhone();
-		
-	}
+public class UserDTO implements Serializable {
 
-	public Integer getId() {
-		return id;
-	}
+    private static final long serialVersionUID = 2751381371493200731L;
+    private String username;
+    private String name;
+    private String surname;
+    private String email;
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public UserDTO() {
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public UserDTO(IUser iUser) {
+        this.username = iUser.getUsername();
+        this.name = iUser.getName();
+        this.surname = iUser.getSurname();
+        this.email = iUser.getEmail();
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public boolean isEnabled() {
-		return enabled;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public void setEnabled(boolean enabled) {
-		this.enabled = enabled;
-	}
+    public String getSurname() {
+        return surname;
+    }
 
-	public Date getRegisterDate() {
-		return registerDate;
-	}
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
 
-	public void setRegisterDate(Date registerDate) {
-		this.registerDate = registerDate;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public String getSurname() {
-		return surname;
-	}
-
-	public void setSurname(String surname) {
-		this.surname = surname;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public String getPhone() {
-		return phone;
-	}
-
-	public void setPhone(String phone) {
-		this.phone = phone;
-	}
-
-	@Override
-	public String toString() {
-		return "UserDTO [id=" + id + ", username=" + username + "]";
-	}
+    @Override
+    public String toString() {
+        return "UserDTO [username=" + username + ", name=" + name + ", surname=" + surname + ", email=" + email + "]";
+    }
 
 }

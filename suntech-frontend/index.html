@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head lang="pt">
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <script src="bower_components/angular/angular.min.js"></script>
+        <script src="bower_components/angular-resource/angular-resource.min.js"></script>
+        <script src="bower_components/jquery/dist/jquery.min.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="src/app/module.js"></script>
+        <script src="src/app/user/user.controller.js" ></script>
+        <script src="src/app/user/user.service.js" ></script>
+        <script src="src/app/shared/constants.js"></script>
+        <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+    </head>
+    <body ng-app="find.user" ng-strict-di>
+        <div class="container-fluid">
+            <div ng-include="'src/app/user/user.html'"></div>
+        </div>
+    </body>
+</html>

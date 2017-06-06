@@ -1,0 +1,17 @@
+{
+  "name": "front-end-suntech",
+  "version": "1.0.0",
+  "description": "Listing users Project",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.9.0"
+  }
+}

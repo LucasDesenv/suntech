@@ -1,5 +1,6 @@
 -- MySql
 CREATE SCHEMA `suntech`;
+use `suntech`;
 CREATE TABLE `user` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(100) DEFAULT NULL,
@@ -9,7 +10,7 @@ CREATE TABLE `user` (
   `phone` varchar(15) DEFAULT NULL,
   `registerdate` datetime DEFAULT NULL,
   `surname` varchar(50) DEFAULT NULL,
-  `username` varchar(14) DEFAULT NULL,
+  `username` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 

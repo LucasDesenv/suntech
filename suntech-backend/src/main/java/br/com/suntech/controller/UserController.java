@@ -8,9 +8,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.util.CollectionUtils;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.google.gson.Gson;
@@ -18,6 +19,7 @@ import com.google.gson.Gson;
 import br.com.suntech.domain.IUser;
 import br.com.suntech.dto.UserDTO;
 import br.com.suntech.service.UserService;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping(value = "/v1/api/user")
@@ -26,13 +28,15 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 
-	@GetMapping(value="/{filter}",produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
-	public ResponseEntity<String> filterUsers(@PathVariable String filter) {
+    @GetMapping(produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
+    @CrossOrigin(origins = "http://localhost:8090")
+    @ApiOperation(value = "User finding GET API")
+    public ResponseEntity<String> filterUsers(@RequestParam(name = "filter", required = true) String filter) {
 		List<UserDTO> usersFound = convert(userService.findByFilter(filter));
 		if (CollectionUtils.isEmpty(usersFound)){
 			return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 		}
-		return new ResponseEntity<>(new Gson().toJson(usersFound),HttpStatus.OK);
+        return new ResponseEntity<>(new Gson().toJson(usersFound), HttpStatus.OK);
 
 	}
 
