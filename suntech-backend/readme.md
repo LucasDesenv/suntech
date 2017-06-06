@@ -7,3 +7,5 @@
 * 2 - Run as Java Application the class `SuntechApplication.java`
 * 2.1 - It will be accessible at `http://localhost:8070/suntech`
 * 2.2 - The endpoint documentations are located in: `http://localhost:8070/suntech/swagger-ui.html`
+
+** Java version: 1.8
