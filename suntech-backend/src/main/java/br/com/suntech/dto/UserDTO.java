@@ -1,10 +1,10 @@
 package br.com.suntech.dto;
 
-import java.io.Serializable;
+import java.util.Date;
 
 import br.com.suntech.domain.IUser;
 
-public class UserDTO implements Serializable {
+public class UserDTO implements IUser {
 
     private static final long serialVersionUID = 2751381371493200731L;
     private String username;
@@ -12,6 +12,10 @@ public class UserDTO implements Serializable {
     private String surname;
     private String email;
     private Integer id;
+    private String password;
+    private boolean enabled;
+    private Date registerDate;
+    private String phone;
 
     public UserDTO() {
     }
@@ -22,8 +26,13 @@ public class UserDTO implements Serializable {
         this.surname = iUser.getSurname();
         this.email = iUser.getEmail();
         this.id = iUser.getId();
+        this.enabled = iUser.isEnabled();
+        this.registerDate = iUser.getRegisterDate();
+        this.password = iUser.getPassword();
+        this.phone = iUser.getPhone();
     }
 
+    @Override
     public String getUsername() {
         return username;
     }
@@ -32,6 +41,7 @@ public class UserDTO implements Serializable {
         this.username = username;
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -40,6 +50,7 @@ public class UserDTO implements Serializable {
         this.name = name;
     }
 
+    @Override
     public String getSurname() {
         return surname;
     }
@@ -48,6 +59,7 @@ public class UserDTO implements Serializable {
         this.surname = surname;
     }
 
+    @Override
     public String getEmail() {
         return email;
     }
@@ -56,12 +68,49 @@ public class UserDTO implements Serializable {
         this.email = email;
     }
 
+    @Override
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return enabled;
+    }
+
+    public void setEnabled(boolean enabled) {
+        this.enabled = enabled;
+    }
+
+    @Override
+    public Date getRegisterDate() {
+        return registerDate;
+    }
+
+    public void setRegisterDate(Date registerDate) {
+        this.registerDate = registerDate;
+    }
+
+    @Override
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     @Override
