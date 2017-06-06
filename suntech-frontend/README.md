@@ -1,13 +1,13 @@
 **Required:**
 
-**npm installation**
+* **npm installation**
   * https://www.npmjs.com/package/npm
-**http-server installation**
+* **http-server installation**
   * https://www.npmjs.com/package/http-server
-**bower installation**
+* **bower installation**
   * https://www.npmjs.com/package/bower
 
-**How to run:**
+* **How to run:**
 
 in the root folder (/suntech/), execute:
 
