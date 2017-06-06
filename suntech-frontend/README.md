@@ -8,6 +8,7 @@
   * https://www.npmjs.com/package/bower
 
 * **How to run:**
+
 in the root folder (/suntech/), execute:
 
   * npm install
